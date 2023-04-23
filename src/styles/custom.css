@@ -1,0 +1,82 @@
+:root {
+  --half-border-color: #ffffff;
+}
+
+.half-border {
+  position: relative;
+}
+
+.half-border:after {
+  padding: 0;
+  margin: 0;
+  display: block;
+  content: "";
+  width: 60%;
+  height: 3px;
+  background-color: var(--half-border-color);
+  position: absolute;
+  bottom: -1px;
+}
+
+.hover\:half-border:hover {
+  position: relative;
+}
+
+.hover\:half-border:hover:after {
+  padding: 0;
+  margin: 0;
+  display: block;
+  content: "";
+  height: 3px;
+  background-color: var(--half-border-color);
+  position: absolute;
+  bottom: -2px;
+  -webkit-animation: expandRight 0.2s forwards;
+  animation: expandRight 0.2s forwards;
+}
+
+.hover\:half-border {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.custom:hover .hover\:half-border {
+  position: relative;
+}
+
+.custom:hover .hover\:half-border:after {
+  padding: 0;
+  margin: 0;
+  display: block;
+  content: "";
+  width: 60%;
+  height: 2px;
+  background-color: var(--half-border-color);
+  position: absolute;
+  bottom: -2px;
+  -webkit-animation: expandRight 0.2s forwards;
+  animation: expandRight 0.2s forwards;
+}
+
+@-webkit-keyframes expandRight {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes expandRight {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30%;
+  }
+  100% {
+    width: 80%;
+  }
+}
